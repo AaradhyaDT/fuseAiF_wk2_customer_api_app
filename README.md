@@ -33,6 +33,13 @@ This API provides comprehensive endpoints for managing customer records, their a
 ├── app/
 │   ├── crud.py          # Centralized database query logic
 │   ├── router.py        # Customer endpoints router
+│   ├── employees_router.py # Employees endpoints router
+│   ├── offices_router.py   # Offices endpoints router
+│   ├── orderdetails_router.py # OrderDetails endpoints router
+│   ├── orders_router.py    # Orders endpoints router
+│   ├── payments_router.py  # Payments endpoints router
+│   ├── productlines_router.py # ProductLines endpoints router
+│   ├── products_router.py  # Products endpoints router
 │   ├── stats_router.py  # Asynchronous Statistics endpoints router
 │   ├── models.py        # SQLAlchemy database models
 │   ├── schemas.py       # Pydantic validation schemas (V2 format)
@@ -94,6 +101,69 @@ Once running, access the interactive API documentation at:
 | DELETE | `/customers/{customer_id}` | Delete a customer |
 | GET | `/customers/{customer_id}/orders` | Get all orders for a specific customer |
 | GET | `/customers/{customer_id}/payments` | Get all payments for a specific customer |
+
+### Employees Router (`/employees`)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/employees/` | List all employees (supports pagination) |
+| POST | `/employees/` | Create a new employee |
+| GET | `/employees/{employee_number}` | Get employee by ID |
+| PUT | `/employees/{employee_number}` | Update employee information |
+| DELETE | `/employees/{employee_number}` | Delete an employee |
+
+### Offices Router (`/offices`)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/offices/` | List all offices (supports pagination) |
+| POST | `/offices/` | Create a new office |
+| GET | `/offices/{office_code}` | Get office by code |
+| PUT | `/offices/{office_code}` | Update office information |
+| DELETE | `/offices/{office_code}` | Delete an office |
+
+### OrderDetails Router (`/orderdetails`)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/orderdetails/` | List all order details (supports pagination) |
+| POST | `/orderdetails/` | Create a new order detail |
+| GET | `/orderdetails/{order_id}/{product_code}` | Get order detail by composite ID |
+| PUT | `/orderdetails/{order_id}/{product_code}` | Update order detail information |
+| DELETE | `/orderdetails/{order_id}/{product_code}` | Delete an order detail |
+
+### Orders Router (`/orders`)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/orders/` | List all orders (supports pagination) |
+| POST | `/orders/` | Create a new order |
+| GET | `/orders/{order_id}` | Get order by ID |
+| PUT | `/orders/{order_id}` | Update order information |
+| DELETE | `/orders/{order_id}` | Delete an order |
+
+### Payments Router (`/payments`)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/payments/` | List all payments (supports pagination) |
+| POST | `/payments/` | Create a new payment |
+| GET | `/payments/{customer_id}/{check_number}` | Get payment by composite ID |
+| PUT | `/payments/{customer_id}/{check_number}` | Update payment information |
+| DELETE | `/payments/{customer_id}/{check_number}` | Delete a payment |
+
+### ProductLines Router (`/productlines`)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/productlines/` | List all product lines (supports pagination) |
+| POST | `/productlines/` | Create a new product line |
+| GET | `/productlines/{product_line}` | Get product line by name |
+| PUT | `/productlines/{product_line}` | Update product line information |
+| DELETE | `/productlines/{product_line}` | Delete a product line |
+
+### Products Router (`/products`)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/products/` | List all products (supports pagination) |
+| POST | `/products/` | Create a new product |
+| GET | `/products/{product_code}` | Get product by code |
+| PUT | `/products/{product_code}` | Update product information |
+| DELETE | `/products/{product_code}` | Delete a product |
 
 ### Stats Router (`/stats`)
 | Method | Endpoint | Description |
