@@ -114,6 +114,37 @@ Once running, access the interactive API documentation at:
 | GET | `/health` | Application health check |
 | GET | `/` | Welcome message |
 
+## Week 3 (WK3) - Roadmap & Probable Implementations
+
+The following features and enhancements are planned for Week 3:
+
+### Core CRUD Operations
+- ✅ Extend CRUD operations to **all tables** (currently limited to customers)
+  - Orders, Payments, Products, ProductLines, Employees, Offices, OrderDetails
+- ✅ Implement **count operations** across all tables
+- ✅ Add **overall count** statistics endpoint for comprehensive data insights
+
+### Query Intelligence
+- 🔄 **Query Decomposition**: Parse complex user queries into structured components
+  - Break down multi-table queries into logical units
+  - Support for `JOIN` operations across related tables
+  - Optimize query structure for execution
+
+### Table & Schema Intelligence
+- 🔄 **Table Detection**: Automatically identify which tables are needed for a query
+- 🔄 **Column Management**: Support dynamic column selection and deletion
+- 🔄 **Query Creation**: Generate optimized SQL queries from decomposed components
+
+### Query Execution & LLM Integration
+- 🔄 **Query Execution Engine**: Execute complex queries against the PostgreSQL backend
+- 🔄 **LLM Response Layer**: 
+  - Process query results through an LLM
+  - Convert structured data into natural language responses
+  - Provide intelligent data insights and summaries
+
+### Architecture Evolution
+The application will evolve from a simple CRUD API to an **AI-powered query interface** that understands natural language requests and intelligently queries the database.
+
 ## License
 
 See LICENSE file for details.
